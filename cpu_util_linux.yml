@@ -17,12 +17,4 @@
             - "User CPU usage: {{user_cpu}}"
             - "System CPU usage: {{system_cpu}}"
       
-      - name: send CPU utilization report from mail.
-        mail:
-          port: 25
-          to: jayant.kumarjain@hcltech.com
-          subject: CPU utilization report
-          body: System hostname - "{{ ansible_hostname }}"
-                User CPU usage - "{{user_cpu}}"%
-                System CPU usage - "{{ system_cpu }}"%
 ...
