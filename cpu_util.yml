@@ -1,6 +1,6 @@
 ---
   - name: monitor cpu utilization
-    hosts: servers
+    hosts: all
     tasks:
       - name: get CPU usage
         shell: "top -b -n 1"
@@ -20,7 +20,7 @@
       - name: send CPU utilization report from mail.
         mail:
           port: 25
-          to: RECEIVER NAME <xyz@gmail.com>
+          to: jayant.kumarjain@hcltech.com
           subject: CPU utilization report
           body: System hostname - "{{ ansible_hostname }}"
                 User CPU usage - "{{user_cpu}}"%
